@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'login_page.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -34,16 +35,11 @@ class ProfilePage extends StatelessWidget {
             ),
             Spacer(),
             Align(
-              //menempatkan button di tengah bawah
+              // Menempatkan button di tengah bawah
               alignment: Alignment.bottomCenter,
               child: ElevatedButton(
                 onPressed: () {
-                  //kembali ke halaman login dan reset form login
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
-                        (Route<dynamic> route) => false,
-                  );
+                  SystemNavigator.pop();
                 },
                 child: Text('Keluar'),
               ),
